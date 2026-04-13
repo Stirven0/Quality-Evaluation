@@ -86,10 +86,10 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o pull request para
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
 
-👨‍💻 Autor
+👨‍💻 Autores
 
-Tu Nombre - Proyecto Académico 2024
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+Proyecto Académico 2024
+- GitHub: [@Stirven0](https://github.com/Stirven0)
 
 🙏 Agradecimientos
 
