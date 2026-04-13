@@ -71,12 +71,12 @@ def furps(request):
         {
             'nombre': 'Funcionalidad',
             'items': [
-                {'item': 'Características', 'puntaje': 18},
-                {'item': 'Seguridad', 'puntaje': 17},
-                {'item': 'Interoperabilidad', 'puntaje': 16},
+                {'item': 'Características', 'puntaje': 9},
+                {'item': 'Seguridad', 'puntaje': 8},
+                {'item': 'Interoperabilidad', 'puntaje': 8},
             ],
-            'total': 51,
-            'maximo': 60
+            'total': 25,
+            'maximo': 30
         },
         {
             'nombre': 'Usabilidad',
