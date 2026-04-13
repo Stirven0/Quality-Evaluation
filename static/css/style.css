@@ -180,3 +180,29 @@ canvas {
     background-clip: text;
 }
 
+/* Fix para bloqueo de interacción */
+.hero-section .container {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+}
+
+/* Permitir selección de texto */
+body {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+}
+
+/* Asegurar que botones sean clickeables */
+.btn {
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+    cursor: pointer !important;
+}
+
+/* Si hay algún overlay fantasma */
+main {
+    position: relative;
+    z-index: 1;
+}
