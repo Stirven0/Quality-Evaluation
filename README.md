@@ -33,13 +33,13 @@ git clone https://github.com/tu-usuario/quality-evaluation.git
 cd quality-evaluation
 
 # 2. Crear entorno virtual
-python -m venv venv
+python -m venv .venv
 
 # 3. Activar entorno virtual
 # Windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # Linux/Mac:
-source venv/bin/activate
+source .venv/bin/activate
 
 # 4. Instalar dependencias
 pip install -r requirements.txt
