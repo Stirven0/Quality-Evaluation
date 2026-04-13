@@ -90,6 +90,8 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 
 Proyecto Académico 2024
 - GitHub: [@Stirven0](https://github.com/Stirven0)
+- GitHub: [@jonathaniguaranp](https://github.com/jonathaniguaranp)
+- GitHub: [@Elias-Cuadrado](https://github.com/Elias-Cuadrado)
 
 🙏 Agradecimientos
 
