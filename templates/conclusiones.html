@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block title %}Conclusiones - QualityEval{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">
+            <i class="bi bi-journal-check me-3"></i>Conclusiones
+        </h1>
+        <p class="lead text-muted">Síntesis del análisis de calidad de Instagram</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow border-0">
+                <div class="card-body p-5">
+                    <h3 class="fw-bold mb-4 text-primary">Resumen Ejecutivo</h3>
+                    
+                    <p class="fs-5 mb-4">
+                        Tras la aplicación sistemática de tres modelos de calidad de software reconocidos internacionalmente 
+                        (<strong>McCall</strong>, <strong>Boehm</strong> y <strong>FURPS</strong>) sobre la plataforma Instagram, 
+                        se ha determinado que la aplicación cumple con estándares de <span class="badge bg-success fs-6">Alta Calidad</span>, 
+                        obteniendo una media ponderada del <strong>85.67%</strong>.
+                    </p>
+
+                    <hr class="my-4">
+
+                    <h4 class="fw-bold mb-3">Hallazgos Principales</h4>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-primary fw-bold">1. Fortalezas Identificadas</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Usabilidad excepcional:</strong> Los tres modelos coinciden en puntuar la interfaz de usuario 
+                                y experiencia de usuario (UX) con calificaciones superiores al 90%.
+                            </li>
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Portabilidad multiplataforma:</strong> Funcionamiento homogéneo en iOS, Android y Web, 
+                                con sincronización en tiempo real.
+                            </li>
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Funcionalidad robusta:</strong> Cumplimiento integral de requisitos funcionales 
+                                esperados para una red social moderna.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="text-warning fw-bold">2. Áreas de Mejora</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+                                <strong>Eficiencia de recursos:</strong> Consumo elevado de batería y memoria RAM en dispositivos 
+                                de gama media/baja (puntuación Boehm: 78%).
+                            </li>
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+                                <strong>Mantenibilidad técnica:</strong> Complejidad del código base dificulta actualizaciones 
+                                rápidas y detección de errores (puntuación McCall: 8/10).
+                            </li>
+                            <li class="list-group-item ps-0">
+                                <i class="bi bi-exclamation-triangle-fill text-warning me-2"></i>
+                                <strong>Rendimiento en condiciones límites:</strong> Latencia perceptible en conexiones 
+                                de baja velocidad o dispositivos antiguos.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="alert alert-primary d-flex align-items-center mt-4" role="alert">
+                        <i class="bi bi-lightbulb-fill me-3 fs-4"></i>
+                        <div>
+                            <strong>Conclusión Técnica:</strong> Instagram demuestra madurez arquitectónica y cumplimiento 
+                            satisfactorio de atributos de calidad externos (visibles al usuario). Sin embargo, presenta 
+                            deuda técnica en atributos internos que podrían impactar la sostenibilidad a largo plazo.
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="fw-bold mb-3">Validez del Estudio</h4>
+                    <p>
+                        La correlación positiva entre los tres modelos aplicados (desviación estándar de apenas 2.08 puntos) 
+                        confirma la <strong>confiabilidad metodológica</strong> del análisis. La discrepancia mayor se presenta 
+                        entre Boehm (84%) y McCall (88%), explicada por la mayor granularidad del modelo McCall en métricas 
+                        de usabilidad y portabilidad.
+                    </p>
+
+                    <div class="bg-light p-4 rounded-3 mt-4">
+                        <h5 class="fw-bold mb-3">Recomendaciones</h5>
+                        <ol class="mb-0">
+                            <li class="mb-2">Optimización del consumo de recursos mediante técnicas de lazy loading y compresión de medios.</li>
+                            <li class="mb-2">Refactorización progresiva del código base para mejorar la verificabilidad y mantenibilidad.</li>
+                            <li class="mb-2">Implementación de caché inteligente para mejorar rendimiento en condiciones de red limitadas.</li>
+                            <li>Mejora continua de la accesibilidad (WCAG 2.1) para incrementar la usabilidad universal.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-5">
+            <i class="bi bi-house-door me-2"></i>Volver al Inicio
+        </a>
+    </div>
+</div>
+{% endblock %}
+

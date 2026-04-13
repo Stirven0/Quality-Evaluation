@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+
+{% block title %}Comparación de Modelos - Instagram{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">
+            <i class="bi bi-bar-chart-line me-3"></i>Comparación de Modelos
+        </h1>
+        <p class="lead text-muted">Análisis comparativo entre McCall, Boehm y FURPS</p>
+    </div>
+
+    <!-- Tabla Comparativa -->
+    <div class="card shadow-sm border-0 mb-5">
+        <div class="card-header bg-dark text-white py-3">
+            <h5 class="mb-0 fw-semibold">Resumen Comparativo - Instagram</h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="text-start">Modelo</th>
+                            <th>Enfoque Principal</th>
+                            <th>Puntuación</th>
+                            <th>Porcentaje</th>
+                            <th>Visualización</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-start fw-bold text-primary">
+                                <i class="bi bi-grid-3x3-gap me-2"></i>McCall
+                            </td>
+                            <td>Factor-Criterio-Métrica</td>
+                            <td><span class="fs-5 fw-bold">88</span>/100</td>
+                            <td>
+                                <span class="badge bg-primary fs-6">88%</span>
+                            </td>
+                            <td style="width: 30%">
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-primary progress-bar-striped" style="width: 88%">88%</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold text-success">
+                                <i class="bi bi-layers me-2"></i>Boehm
+                            </td>
+                            <td>Jerárquico</td>
+                            <td><span class="fs-5 fw-bold">84</span>/100</td>
+                            <td>
+                                <span class="badge bg-success fs-6">84%</span>
+                            </td>
+                            <td>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-success progress-bar-striped" style="width: 84%">84%</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-start fw-bold text-info">
+                                <i class="bi bi-pentagon me-2"></i>FURPS
+                            </td>
+                            <td>Categórico (5 dimensiones)</td>
+                            <td><span class="fs-5 fw-bold">85</span>/100</td>
+                            <td>
+                                <span class="badge bg-info fs-6">85%</span>
+                            </td>
+                            <td>
+                                <div class="progress" style="height: 20px;">
+                                    <div class="progress-bar bg-info progress-bar-striped" style="width: 85%">85%</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot class="table-dark fw-bold">
+                        <tr>
+                            <td colspan="2" class="text-end">PROMEDIO GENERAL:</td>
+                            <td class="fs-5">{{ promedio }}</td>
+                            <td colspan="2" class="text-start">Alta Calidad de Software</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráficas -->
+    <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-white py-3 border-bottom">
+                    <h5 class="mb-0 fw-bold">Gráfica Comparativa (Barras)</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="barChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-white py-3 border-bottom">
+                    <h5 class="mb-0 fw-bold">Distribución de Calidad (Radar)</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="radarChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Análisis -->
+    <div class="card border-0 shadow-sm bg-light">
+        <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Análisis Comparativo</h4>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary text-white rounded-2 p-2">
+                                <i class="bi bi-trophy fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fw-bold">Mejor Puntuación</h6>
+                            <p class="small text-muted mb-0">McCall (88%) destaca por la exhaustividad de sus 11 métricas cubriendo todas las dimensiones de calidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0">
+                            <div class="bg-success text-white rounded-2 p-2">
+                                <i class="bi bi-balance-scale fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fw-bold">Mayor Consistencia</h6>
+                            <p class="small text-muted mb-0">Los tres modelos coinciden en calificar a Instagram con más de 84%, validando la fiabilidad del análisis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex align-items-start">
+                        <div class="flex-shrink-0">
+                            <div class="bg-info text-white rounded-2 p-2">
+                                <i class="bi bi-check2-circle fs-4"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="fw-bold">Resultado Final</h6>
+                            <p class="small text-muted mb-0">Promedio de <strong>{{ promedio }}%</strong> indica que Instagram es software de alta calidad según estándares internacionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center">
+        <a href="{% url 'conclusiones' %}" class="btn btn-dark btn-lg px-5">
+            Ver Conclusiones <i class="bi bi-journal-text ms-2"></i>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Gráfica de Barras
+    const ctxBar = document.getElementById('barChart').getContext('2d');
+    new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+            labels: ['McCall', 'Boehm', 'FURPS'],
+            datasets: [{
+                label: 'Puntuación',
+                data: [88, 84, 85],
+                backgroundColor: [
+                    'rgba(13, 110, 253, 0.8)',
+                    'rgba(25, 135, 84, 0.8)',
+                    'rgba(13, 202, 240, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(13, 110, 253, 1)',
+                    'rgba(25, 135, 84, 1)',
+                    'rgba(13, 202, 240, 1)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Comparación de Puntuaciones'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // Gráfica Radar
+    const ctxRadar = document.getElementById('radarChart').getContext('2d');
+    new Chart(ctxRadar, {
+        type: 'radar',
+        data: {
+            labels: [
+                'Funcionalidad',
+                'Fiabilidad',
+                'Usabilidad',
+                'Eficiencia',
+                'Mantenibilidad',
+                'Portabilidad'
+            ],
+            datasets: [{
+                label: 'McCall',
+                data: [90, 80, 100, 90, 80, 100],
+                fill: true,
+                backgroundColor: 'rgba(13, 110, 253, 0.2)',
+                borderColor: 'rgba(13, 110, 253, 1)',
+                pointBackgroundColor: 'rgba(13, 110, 253, 1)',
+            }, {
+                label: 'Boehm',
+                data: [88, 83, 90, 78, 82, 85],
+                fill: true,
+                backgroundColor: 'rgba(25, 135, 84, 0.2)',
+                borderColor: 'rgba(25, 135, 84, 1)',
+                pointBackgroundColor: 'rgba(25, 135, 84, 1)',
+            }, {
+                label: 'FURPS',
+                data: [85, 87, 83, 77, 77, 0],
+                fill: true,
+                backgroundColor: 'rgba(13, 202, 240, 0.2)',
+                borderColor: 'rgba(13, 202, 240, 1)',
+                pointBackgroundColor: 'rgba(13, 202, 240, 1)',
+            }]
+        },
+        options: {
+            responsive: true,
+            elements: {
+                line: { borderWidth: 3 }
+            },
+            scales: {
+                r: {
+                    angleLines: { display: false },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}
+

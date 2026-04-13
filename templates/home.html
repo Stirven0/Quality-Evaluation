@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Evaluación de Calidad{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center text-white">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <span class="badge bg-primary mb-3 px-3 py-2 fs-6">Evaluación Académica 2024</span>
+                <h1 class="display-3 fw-bold mb-4 animate-fade-in">{{ titulo }}</h1>
+                <p class="lead fs-4 mb-4 text-white-50">{{ subtitulo }}</p>
+                <p class="mb-5 fs-5">Análisis comparativo de calidad utilizando tres modelos estándar de la ingeniería de software aplicados a la plataforma Instagram.</p>
+                
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="{% url 'mccall' %}" class="btn btn-light btn-lg px-4 fw-semibold">
+                        <i class="bi bi-table me-2"></i>Ver Evaluaciones
+                    </a>
+                    <a href="{% url 'modelos' %}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="bi bi-book me-2"></i>Conocer Modelos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-wrapper bg-primary bg-opacity-10 text-primary rounded-circle mb-3 mx-auto">
+                            <i class="bi bi-grid-3x3-gap fs-1"></i>
+                        </div>
+                        <h4 class="card-title">Modelo McCall</h4>
+                        <p class="card-text text-muted">Enfoque en factores de producto, revisión y transición con 11 métricas específicas.</p>
+                        <a href="{% url 'mccall' %}" class="btn btn-outline-primary btn-sm">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-wrapper bg-success bg-opacity-10 text-success rounded-circle mb-3 mx-auto">
+                            <i class="bi bi-layers fs-1"></i>
+                        </div>
+                        <h4 class="Modelo Boehm</h4>
+                        <p class="card-text text-muted">Modelo jerárquico que descompone la calidad en 7 características principales.</p>
+                        <a href="{% url 'boehm' %}" class="btn btn-outline-success btn-sm">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm card-hover">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-wrapper bg-info bg-opacity-10 text-info rounded-circle mb-3 mx-auto">
+                            <i class="bi bi-pentagon fs-1"></i>
+                        </div>
+                        <h4 class="card-title">Modelo FURPS</h4>
+                        <p class="card-text text-muted">Categorización en Funcionalidad, Usabilidad, Confiabilidad, Rendimiento y Soporte.</p>
+                        <a href="{% url 'furps' %}" class="btn btn-outline-info btn-sm">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Software Info Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="fw-bold mb-4">Software Evaluado</h2>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-gradient-instagram text-white rounded-3 p-3 me-3 shadow">
+                        <i class="bi bi-instagram fs-1"></i>
+                    </div>
+                    <div>
+                        <h3 class="mb-0 fw-bold">Instagram</h3>
+                        <p class="text-muted mb-0">Red Social de Compartición Visual</p>
+                    </div>
+                </div>
+                <p class="fs-5 text-muted">Plataforma líder mundial en compartición de fotos y videos, propiedad de Meta Platforms. Evaluada según los estándares de calidad de software más reconocidos.</p>
+                
+                <div class="row mt-4 g-3">
+                    <div class="col-6">
+                        <div class="border-start border-primary border-4 ps-3">
+                            <h5 class="fw-bold text-primary mb-1">2,000M+</h5>
+                            <small class="text-muted">Usuarios Activos</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="border-start border-success border-4 ps-3">
+                            <h5 class="fw-bold text-success mb-1">2010</h5>
+                            <small class="text-muted">Año de Lanzamiento</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg bg-gradient-instagram text-white">
+                    <div class="card-body p-5 text-center">
+                        <h4 class="mb-4">Resultados Generales</h4>
+                        <div class="row g-3">
+                            <div class="col-4">
+                                <div class="bg-white bg-opacity-25 rounded-3 p-3">
+                                    <h3 class="fw-bold mb-0">88</h3>
+                                    <small>McCall</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="bg-white bg-opacity-25 rounded-3 p-3">
+                                    <h3 class="fw-bold mb-0">84</h3>
+                                    <small>Boehm</small>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="bg-white bg-opacity-25 rounded-3 p-3">
+                                    <h3 class="fw-bold mb-0">85</h3>
+                                    <small>FURPS</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <a href="{% url 'comparacion' %}" class="btn btn-light w-100 fw-semibold">
+                                <i class="bi bi-bar-chart-line me-2"></i>Ver Comparación Completa
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

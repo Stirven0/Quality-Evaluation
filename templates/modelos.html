@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Modelos de Calidad - QualityEval{% endblock %}
+
+{% block content %}
+<div class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold">Modelos de Calidad de Software</h1>
+        <p class="lead text-muted">Fundamentos teóricos de los estándares de evaluación utilizados</p>
+    </div>
+
+    <!-- McCall Section -->
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+        <div class="row g-0">
+            <div class="col-md-4 bg-primary text-white p-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-3"><i class="bi bi-grid-3x3-gap me-2"></i>McCall</h3>
+                <p class="mb-0">James A. McCall (1977)</p>
+                <small class="opacity-75">Enfoque: Factor-Criterio-Métrica</small>
+            </div>
+            <div class="col-md-8 p-4">
+                <p class="fs-6">El modelo de McCall propone una taxonomía de factores de calidad de software basada en tres perspectivas:</p>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Revisión del Producto:</strong> Capacidad de ser cambiado (mantenibilidad, flexibilidad, verificabilidad)</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Operación del Producto:</strong> Características operacionales (corrección, fiabilidad, eficiencia, integridad, usabilidad)</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i><strong>Transición del Producto:</strong> Adaptación a nuevos entornos (portabilidad, reusabilidad, interoperabilidad)</li>
+                </ul>
+                <div class="mt-3 p-3 bg-light rounded">
+                    <small class="text-muted"><strong>Total de métricas:</strong> 11 factores principales descompuestos en criterios medibles.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Boehm Section -->
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+        <div class="row g-0">
+            <div class="col-md-4 bg-success text-white p-4 d-flex flex-column justify-content-center order-md-2">
+                <h3 class="fw-bold mb-3"><i class="bi bi-layers me-2"></i>Boehm</h3>
+                <p class="mb-0">Barry W. Boehm (1978)</p>
+                <small class="opacity-75">Enfoque: Jerárquico y Decomposición</small>
+            </div>
+            <div class="col-md-8 p-4 order-md-1">
+                <p class="fs-6">Boehm propone un modelo jerárquico que define la calidad como la utilidad general del software. Se estructura en tres niveles:</p>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Características Primarias:</strong> Portabilidad, Utilidad, Mantenibilidad</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Características Intermedias:</strong> Confiabilidad, Eficiencia, Integridad, Interacción</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>Primitivas:</strong> Métricas específicas medibles en el código y documentación</li>
+                </ul>
+                <div class="mt-3 p-3 bg-light rounded">
+                    <small class="text-muted"><strong>Ventaja principal:</strong> Relación directa entre características de alto nivel y métricas de bajo nivel.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FURPS Section -->
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+        <div class="row g-0">
+            <div class="col-md-4 bg-info text-white p-4 d-flex flex-column justify-content-center">
+                <h3 class="fw-bold mb-3"><i class="bi bi-pentagon me-2"></i>FURPS</h3>
+                <p class="mb-0">Hewlett-Packard / IBM (1980s)</p>
+                <small class="opacity-75">Enfoque: Acrónimo Categórico</small>
+            </div>
+            <div class="col-md-8 p-4">
+                <p class="fs-6">FURPS es un sistema de clasificación para evaluar las cualidades del software, ampliamente adoptado en la industria:</p>
+                <div class="row g-2 mt-3">
+                    <div class="col-6 col-md-4">
+                        <div class="p-2 bg-light rounded text-center">
+                            <strong class="text-info d-block">F</strong>
+                            <small>Funcionalidad</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-2 bg-light rounded text-center">
+                            <strong class="text-info d-block">U</strong>
+                            <small>Usabilidad</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-2 bg-light rounded text-center">
+                            <strong class="text-info d-block">R</strong>
+                            <small>Confiabilidad</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-2 bg-light rounded text-center">
+                            <strong class="text-info d-block">P</strong>
+                            <small>Rendimiento</small>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="p-2 bg-light rounded text-center">
+                            <strong class="text-info d-block">S</strong>
+                            <small>Soporte</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 p-3 bg-light rounded">
+                    <small class="text-muted"><strong>Extensión FURPS+:</strong> Incluye restricciones de diseño, implementación, interfaz y requisitos físicos.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'comparacion' %}" class="btn btn-primary btn-lg px-5">
+            <i class="bi bi-arrow-right-circle me-2"></i>Ver Evaluación Comparativa
+        </a>
+    </div>
+</div>
+{% endblock %}
+
